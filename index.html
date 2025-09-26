@@ -38,7 +38,7 @@
 				</section>
 
 				<section>
-					<img data-src="screen.png" width="650">
+					<img data-src="screen.png" width="500">
 				</section>
 
 				<section>
@@ -104,10 +104,24 @@
 
 				<section>
 					<h4> Прямое и обратное преобразование Лапласа</h4>
-					
+					<p>\[
+					\footnotesize
+					\begin{align*}
+					\overline{S}(p) &= \int_{0}^{+\infty} s(t) e^{-pt} \, dt  \\
+					s(t) &= \frac{1}{2\pi j} \int_{\alpha - j\infty}^{\alpha + j\infty} \overline{S}(p) e^{pt} \, dp, \, \alpha > \alpha_0  \\
+					s(t) &\div \overline{S}(p)  \\
+					\overline{S}(p) &= L_t \left\{ s(t); p \right\} = L \left\{ s(t) \right\}  \\
+					s(t) &= L_p^{-1} \left\{ \overline{S}(p); t \right\} = L^{-1} \left\{ \overline{S}(p) \right\}  \\
+					s(t)\big|_{t<0} &= 0  \\
+					\exists M > 0, \alpha_0 > 0 &: \forall t \geq 0 \Rightarrow |s(t)| \leq M e^{\alpha_0 t} 
+					\end{align*}\]
+					<\p>
 					
 				</section>
 				
+				<section>
+					<iframe src="https://vkvideo.ru/video_ext.php?oid=-215205421&id=456239018&hd=2&autoplay=1" width="853" height="480" style="background-color: #000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+				</section>
 
 			</div>
 		</div>
