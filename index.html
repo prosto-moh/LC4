@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +16,99 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+
+				<section>
+
+					<h4> Дифференцирование уравнения </h4>
+
+
+					\[F\left\{ \frac{ds(t)}{dt}; \omega \right\} = j\omega \, F\left\{ s(t); \omega \right\}\]					
+				</section>
+
+				<section>
+					<h4> Свойства изменения масштаба времени </h4>
+					$$
+					\begin{align}
+					s_a(t) &= s(at), \, a > 0 \\
+					F\{ s(at); \omega \} &= \frac{1}{a} F\left\{ s(t); \frac{\omega}{a} \right\} \\
+					S_a(\omega) &= \frac{1}{a} S\left( \frac{\omega}{a} \right) \\
+					\end{align}
+					$$
+				</section>
+
+				<section>
+					<img data-src="screen.png" width="650">
+				</section>
+
+				<section>
+					<h4>Ширина спектра и длительность импульса</h4>
+					<p>Параметры масштаба по времени и частоте обратно-пропорциональны. Если один из них принимает значения меньшие единицы, то другой — большие единицы и наоборот. Иными словами увеличение длительности сигнала приводит к уменьшению ширины его спектра и наоборот.</p>
+					<div class="formula">
+						$$
+						\Delta\omega(a) \tau_{\text{и}}(a) = a \Delta\omega \frac{\tau_{\text{и}}}{a} = \Delta\omega \tau_{\text{и}}
+						$$
+				</section>
+
+				<section>
+					<h4> База сигнала</h4>
+					<p>Произведение ширины спектра на длительность импульса не зависит от параметра масштаба и называется базой сигнала. База сигнала представляет собой число, определяемое только формой сигнала:</p>
+					<div class="formula">
+						$$
+						B_\omega = \Delta\omega \tau_{\text{и}} \\
+						B_f = \Delta f \tau_{\text{и}} = \frac{1}{2\pi} B_{-\omega}
+						$$
+
+				</section>
+
+				<section>
+					<h4>Смещение спектра сигнала</h4>
+					<p>\[
+						\begin{align*}
+						s_{\omega_0}(t) &= s(t) e^{\pm j \omega_0 t}, \quad \omega_0 > 0 \\
+						F\left\{ s(t) e^{\pm j \omega_0 t}; \omega \right\} &= F\left\{ s(t); \omega \mp \omega_0 \right\} \\
+						S_{\omega_0}(\omega) &= S(\omega \mp \omega_0)
+						\end{align*}
+					\]</p>
+				</section>
+
+				<section>
+					<h4>Теорма о свертке</h4>
+					
+					\[F\{s_{1} * s_{2}(t)\} = F\{s_{1}(t)\}F\{s_{2}(t)\}\]
+				</section>
+				
+				
+				<section>
+					<h4>Произведение сигналов</h4>
+					
+					\[F\{s_{1}(t) s_{2}(t)\} =\frac{1}{2\pi}F\{s_{1}(t)\}F\{s_{2}(t)\}(\omega)\]
+					\[F\{s_{1}(t) s_{2}(t)\} = \frac{1}{2\pi}S_{1}*S_{2}(\omega)\]
+				</section>
+				
+				<section>
+					<h4>Симметрия преобразования Фурье</h4>
+					
+					<p>\[
+					\scriptsize
+					\begin{align*}
+					s(t) &\leftrightarrow S(\omega) \leftrightarrow S^*(t) \leftrightarrow 2\pi s^*(\omega) \\[1em]
+					s(t) &\leftrightarrow S(\omega) \\[1em]
+					S(\omega) &= \int_{-\infty}^{+\infty} s(t) e^{-j\omega t} \, dt \\[1em]
+					S(t) &= \int_{-\infty}^{+\infty} s(\omega) e^{-j\omega t} \, d\omega \\[1em]
+					S^*(t) &= \frac{1}{2\pi} \int_{-\infty}^{+\infty} 2\pi s^*(\omega) e^{j\omega t} \, d\omega \\[1em]
+					S^*(t) &\leftrightarrow 2\pi s^*(\omega)
+					\end{align*}
+					\]</p>
+				</section>
+
+				<section>
+					<h4> Прямое и обратное преобразование Лапласа</h4>
+					
+					
+				</section>
+				
+
 			</div>
 		</div>
 
@@ -25,15 +116,13 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
 			});
 		</script>
 	</body>
