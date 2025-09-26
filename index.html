@@ -123,6 +123,61 @@
 					<iframe src="https://vkvideo.ru/video_ext.php?oid=-215205421&id=456239018&hd=2&autoplay=1" width="853" height="480" style="background-color: #000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
 				</section>
 
+				<section>
+					<h4> Свойства преобразования Лапласа </h4>
+					<p>Линейность</p>
+					<p>\[
+					
+					k_1, k_2 \in \mathbb{C} \Rightarrow L\left\{ k_1 s_1(t) + k_2 s_2(t) \right\} = \\
+					= k_1 L\left\{ s_1(t) \right\} + k_2 L\left\{ s_2(t) \right\}
+					\]</p>
+				</section>
+				<section>
+					<h4> Свойства преобразования Лапласа </h4>
+					<p>Запаздывание</p>
+					<p>\[
+						L\{ s(t - t_0) \} = L\{ s(t) \} e^{-p t_0}, \quad t_0 > 0
+					\]</p>
+				</section>
+				<section>
+					<h4> Свойства преобразования Лапласа </h4>
+					<p>Изменение масштаба времени</p>
+					<p>\[
+						L\left\{ s(at) \right\} = \frac{1}{a} L\left\{ s(t); \frac{p}{a} \right\}, \quad a > 0
+					\]</p>
+				</section>
+				<section>
+					<h4> Свойства преобразования Лапласа </h4>
+					<p>Дифференцирование сигнала</p>
+					<p>\[
+						L\left\{ \frac{ds(t)}{dt} \right\} = p L\left\{ s(t) \right\} - s(0)
+					\]</p>
+				</section>
+				<section>
+					<h4> Свойства преобразования Лапласа </h4>
+					<p>Интегрирование сигнала</p>
+					<img data-src="scr2.png" width="300"
+					<p>\[
+						L\left\{ \int_0^t s(t') \, dt' \right\} = \frac{1}{p} L\left\{ s(t) \right\}
+					\]</p>
+				</section>
+				<section>
+					<h4> Свойства преобразования Лапласа </h4>
+					<p>Теорема о свертке</p>
+					<p>\[
+						L\left\{ s_1 * s_2(t) \right\} = L\left\{ s_1(t) \right\} L\left\{ s_2(t) \right\}
+					\]</p>
+				</section>
+				<section>
+					<h4> Свойства преобразования Лапласа </h4>
+					<p>Предельные равенства</p>
+					<p>\[
+						\begin{align*}
+						\lim_{p \to 0} p \overline{S}(p) &= \lim_{t \to +\infty} s(t) \\
+						\lim_{p \to \infty} p \overline{S}(p) &= \lim_{t \to 0} s(t)
+						\end{align*}
+					\]</p>
+				</section>
 			</div>
 		</div>
 
@@ -139,5 +194,7 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
 			});
 		</script>
+
+	
 	</body>
 </html>
